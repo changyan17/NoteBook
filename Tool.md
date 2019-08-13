@@ -1,3 +1,5 @@
+
+
 # 工具使用
 
 ## git
@@ -49,6 +51,43 @@ Git是目前世界上最先进的分布式版本控制系统，可以帮助记�
 
 新建一个仓库之后，当前目录就成为了工作区，工作区下有一个隐藏目录 .git，它就是 Git 的版本库。
 
+如果本地仓库有内容，远程github中的仓库没有内容，需要
+
+1. 关联本地仓库与远程仓库
+
+```shell
+git remote add origin git@github.com:michaelliao/learngit.git
+#远程库的名字就是origin，这是Git默认的叫法，也可以改成别的，但是origin这个名字一看就知道是远程库
+```
+
+2. 将本地仓库的内容推送到远程仓库
+
+```shell
+git push -u origin master
+#实际上是把当前分支master推送到远程
+#由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。
+```
+
+从现在起，只要本地作了提交，就可以通过命令：
+
+```shell
+$ git push origin master
+```
+
+
+
+`git clone`    将远程仓库clone到本地
+
+当你从远程仓库克隆时，实际上Git自动把本地的`master`分支和远程的`master`分支对应起来了，并且，远程仓库的默认名称是`origin`。
+
+```
+$ git clone git@github.com:michaelliao/gitskills.git
+```
+
+
+
+
+
 Git 的版本库有一个称为 Stage 的暂存区以及最后的 History 版本库，History 存储所有分支信息，使用一个 HEAD 指针指向当前分支。
 
 ![1565598791056](C:\Users\changyan\AppData\Roaming\Typora\typora-user-images\1565598791056.png)
@@ -76,7 +115,7 @@ $ git commit -m "add 3 files."
 
 
 
-#### 分支
+#### 分支简介
 
 使用指针将每个提交连接成一条时间线，HEAD 指针指向当前分支指针。
 
@@ -100,7 +139,59 @@ $ git commit -m "add 3 files."
 
 ​		head指针只有一个，用来表明当前操作的分支
 
-#### 冲突
+
+
+#### 分支合并策略
+
+1. fast-foward模式
+
+![1565682796969](C:\Users\changyan\AppData\Roaming\Typora\typora-user-images\1565682796969.png)
+
+**上图所示的情况可以完成快速合并**
+
+2. 禁用fast-foward模式
+
+**如果上图禁用fast_foward模式呢**
+
+```shell
+git merge --no-ff -m "merge with no-ff" 分支名
+```
+
+```
+$ git log --graph --pretty=oneline --abbrev-commit
+*   e1e9c68 (HEAD -> master) merge with no-ff
+|\  
+| * f52c633 (dev) add merge
+|/  
+*   cf810e4 conflict fixed
+...
+```
+
+图示如下：
+
+![1565683100413](C:\Users\changyan\AppData\Roaming\Typora\typora-user-images\1565683100413.png)
+
+3. 分支策略
+
+在实际开发中，我们应该按照几个基本原则进行分支管理：
+
+首先，`master`分支应该是非常稳定的，也就是仅用来发布新版本，平时不能在上面干活；
+
+那在哪干活呢？干活都在`dev`分支上，也就是说，`dev`分支是不稳定的，到某个时候，比如1.0版本发布时，再把`dev`分支合并到`master`上，在`master`分支发布1.0版本；
+
+你和你的小伙伴们每个人都在`dev`分支上干活，每个人都有自己的分支，时不时地往`dev`分支上合并就可以了。
+
+所以，团队合作的分支看起来就像这样：
+
+![1565683365947](C:\Users\changyan\AppData\Roaming\Typora\typora-user-images\1565683365947.png)
+
+> 合并分支时，加上`--no-ff`参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而`fast forward`合并就看不出来曾经做过合并。
+
+
+
+
+
+#### git冲突
 
 当两个分支都对**同一个文件的同一行**进行了修改，在分支合并时就会产生冲突。
 
@@ -116,6 +207,116 @@ Creating a new branch is quick AND simple.
 >>>>>>> feature1
 ```
 
+当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。
+
+解决冲突就是把Git合并失败的文件手动编辑为我们希望的内容，再提交。
+
+用`git log --graph`命令可以看到分支合并图。
+
+
+
+#### 分支推送
+
+1. 简介
+
+`git remote`    查看远程库的信息
+
+`git remote -v`    显示更详细的信息
+
+`git push origin master`    把该分支上的所有本地提交推送到远程库。推送时，要指定本地分支，这样，Git就会把该分支推送到远程库对应的远程分支上
+
+但是，并不是一定要把本地分支往远程推送，那么，哪些分支需要推送，哪些不需要呢？
+
+- `master`分支是主分支，因此要时刻与远程同步；
+- `dev`分支是开发分支，团队所有成员都需要在上面工作，所以也需要与远程同步；
+- bug分支只用于在本地修复bug，就没必要推到远程了，除非老板要看看你每周到底修复了几个bug；
+- feature分支是否推到远程，取决于你是否和你的小伙伴合作在上面开发。
+
+
+
+当你的小伙伴从远程库clone时，默认情况下，你的小伙伴只能看到本地的`master`分支。不信可以用`git branch`命令看看：
+
+```shell
+$ git branch
+* master
+```
+
+现在，你的小伙伴要在`dev`分支上开发，就必须创建远程`origin`的`dev`分支到本地，于是他用这个命令创建本地`dev`分支,本地和远程分支的名称最好一致
+
+```shell
+$ git checkout -b dev origin/dev
+```
+
+现在，他就可以在`dev`上继续修改，然后，时不时地把`dev`分支`push`到远程
+
+
+
+2. 推送失败场景
+
+你的小伙伴已经向`origin/dev`分支推送了他的提交，而碰巧你也对同样的文件作了修改，并试图推送：
+
+因为你的小伙伴的最新提交和你试图推送的提交有冲突，解决办法也很简单，Git已经提示我们，先用`git pull`把最新的提交从`origin/dev`抓下来，然后，在本地合并，解决冲突，再推送
+
+```shell
+$ git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> dev
+```
+
+`git pull`也失败了，原因是没有指定本地`dev`分支与远程`origin/dev`分支的链接，根据提示，设置`dev`和`origin/dev`的链接：
+
+```shell
+$ git branch --set-upstream-to=origin/dev dev
+Branch 'dev' set up to track remote branch 'dev' from 'origin'.
+```
+
+再pull：
+
+```shell
+$ git pull
+Auto-merging env.txt
+CONFLICT (add/add): Merge conflict in env.txt
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+这回`git pull`成功，但是合并有冲突，需要手动解决，解决的方法和分支管理中的[解决冲突](http://www.liaoxuefeng.com/wiki/896043488029600/900004111093344)完全一样。解决后，提交，再push：
+
+```shell
+$ git commit -m "fix env conflict"
+[dev 57c53ab] fix env conflict
+
+$ git push origin dev
+Counting objects: 6, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (6/6), 621 bytes | 621.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0)
+To github.com:michaelliao/learngit.git
+   7a5e5dd..57c53ab  dev -> dev
+```
+
+
+
+**总结：**
+
+因此，多人协作的工作模式通常是这样：
+
+1. 首先，可以试图用`git push origin <branch-name>`推送自己的修改；
+2. 如果推送失败，则因为远程分支比你的本地更新，需要先用`git pull`试图合并；
+3. 如果合并有冲突，则解决冲突，并在本地提交；
+4. 没有冲突或者解决掉冲突后，再用`git push origin <branch-name>`推送就能成功！
+
+如果`git pull`提示`no tracking information`，则说明本地分支和远程分支的链接关系没有创建，用命令`git branch --set-upstream-to <branch-name> origin/<branch-name>`。
+
+这就是多人协作的工作模式，一旦熟悉了，就非常简单。
+
 
 
 #### 储藏（Stashing）
@@ -124,13 +325,40 @@ Creating a new branch is quick AND simple.
 
 可以使用 git stash 将当前分支的修改储藏起来，此时当前工作区的所有修改都会被存到栈中，也就是说当前工作区是干净的，没有任何未提交的修改。此时就可以安全的切换到其它分支上了。
 
-```
+```shell
 $ git stash
 Saved working directory and index state \ "WIP on master: 049d078 added the index file"
 HEAD is now at 049d078 added the index file (To restore them type "git stash apply")
+
+。。。
+
+切换回dev分支
+$ git checkout dev
+#用于查看git吧stash内容存放的位置
+$ git stash list
+#进行stash恢复
+$ git stash pop
 ```
 
-该功能可以用于 bug 分支的实现。如果当前正在 dev 分支上进行开发，但是此时 master 上有个 bug 需要修复，但是 dev 分支上的开发还未完成，不想立即提交。在新建 bug 分支并切换到 bug 分支之前就需要使用 git stash 将 dev 分支的未提交修改储藏起来。
+`git stash apply`        恢复后，stash内容并不删除，你需要用`git stash drop`来删除；
+
+`git stash pop`，恢复的同时把stash内容也删了
+
+
+
+如：
+
+​		当你接到一个修复一个代号101的bug的任务时，很自然地，你想创建一个分支`issue-101`来修复它，但是，等等，当前正在`dev`上进行的工作还没有提交，并不是你不想提交，而是工作只进行到一半，还没法提交，预计完成还需1天时间。但是，必须在两个小时内修复该bug，怎么办？
+
+​		此时你就可以使用git stash功能来储藏工作现场
+
+
+
+你可以多次stash，恢复的时候，先用`git stash list`查看，然后恢复指定的stash，用命令：
+
+```shell
+$ git stash apply stash@{0}
+```
 
 
 
@@ -205,32 +433,23 @@ $ git reset --hard 1094a
 
 `git rm`    从版本库中删除该文件
 
+`git checkout -b `     创建并切换分支
+
+`git branch`    命令查看当前分支
+
+`git checkout`    切换分支
+
+`git merge`    合并指定分支到当前分支
+
+`git branch -d`    删除分支
+
+**因为创建、合并和删除分支非常快，所以Git鼓励你使用分支完成某个任务，合并后再删掉分支，这和直接在`master`分支上工作效果是一样的，但过程更安全。**
+
+`git branch -D <name>`    如果要丢弃一个没有被合并过的分支，可以通过`git branch -D <name>`强行删除
+
+`git remote -v `   查看远程库信息
 
 
-如果本地仓库有内容，远程github中的仓库没有内容，需要
-
-1. 关联本地仓库与远程仓库
-
-```shell
-git remote add origin git@github.com:michaelliao/learngit.git
-#远程库的名字就是origin，这是Git默认的叫法，也可以改成别的，但是origin这个名字一看就知道是远程库
-```
-
-2. 将本地仓库的内容推送到远程仓库
-
-```shell
-git push -u origin master
-#实际上是把当前分支master推送到远程
-#由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。
-```
-
-从现在起，只要本地作了提交，就可以通过命令：
-
-```shell
-$ git push origin master
-```
-
-lll
 
 
 
