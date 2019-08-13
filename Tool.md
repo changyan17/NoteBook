@@ -90,7 +90,7 @@ $ git clone git@github.com:michaelliao/gitskills.git
 
 Git 的版本库有一个称为 Stage 的暂存区以及最后的 History 版本库，History 存储所有分支信息，使用一个 HEAD 指针指向当前分支。
 
-![1565598791056](C:\Users\changyan\AppData\Roaming\Typora\typora-user-images\1565598791056.png)
+![1565598791056](https://raw.githubusercontent.com/changyan17/NoteBook/master/pictures/1565598791056.png)
 
 - git add files 把文件的修改添加到暂存区
 - git commit 把暂存区的修改提交到当前分支，提交之后暂存区就被清空了
