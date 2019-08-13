@@ -2,9 +2,13 @@
 
 # 工具使用
 
+[TOC]
+
 ## git
 
 ​		在windows环境下模拟linux环境
+
+
 
 ### git安装
 
@@ -476,6 +480,20 @@ $ git reset --hard 1094a
 - [廖雪峰 : Git 教程](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)（使用过程即描述非常清晰）
 - [Learn Git Branching
 - https://github.com/huster-mr/CS-Notes
+
+
+
+#### 小技能
+
+##### 场景一
+
+​		如果在本地仓库创建markdown文件，且文档中包含图片，同步到远程仓库中，远程仓库中的图片显示异常
+
+​		解决方案：
+
+		1. 上传本地图片至github中
+  		2. 点击github中图片的下载，将其连接复制到markdown本地文件中，如：https://raw.githubusercontent.com/changyan17/NoteBook/master/pictures/1565615025778.png
+  		3. 更新markdown文档中的全部图片连接后，再次上传即可正常显示图片
 
 
 
