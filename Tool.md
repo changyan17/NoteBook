@@ -191,6 +191,47 @@ $ git reset --hard 1094a
 
 
 
+> 场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令`git checkout -- file`。
+>
+> 场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令`git reset HEAD <file>`，就回到了场景1，第二步按场景1操作。
+>
+> 场景3：已经提交了不合适的修改到版本库时，想要撤销本次提交，参考[版本回退](https://www.liaoxuefeng.com/wiki/896043488029600/897013573512192)一节，不过前提是没有推送到远程库。
+
+
+
+ **注意：从来没有被添加到版本库就被删除的文件，是无法恢复的！**
+
+
+
+`git rm`    从版本库中删除该文件
+
+
+
+如果本地仓库有内容，远程github中的仓库没有内容，需要
+
+1. 关联本地仓库与远程仓库
+
+```shell
+git remote add origin git@github.com:michaelliao/learngit.git
+#远程库的名字就是origin，这是Git默认的叫法，也可以改成别的，但是origin这个名字一看就知道是远程库
+```
+
+2. 将本地仓库的内容推送到远程仓库
+
+```shell
+git push -u origin master
+#实际上是把当前分支master推送到远程
+#由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。
+```
+
+从现在起，只要本地作了提交，就可以通过命令：
+
+```shell
+$ git push origin master
+```
+
+lll
+
 
 
 #### reference：
