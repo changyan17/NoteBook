@@ -362,12 +362,6 @@ $ git stash apply stash@{0}
 
 
 
-#### Git 命令一览
-
-![img](https://raw.githubusercontent.com/CyC2018/CS-Notes/master/notes/pics/7a29acce-f243-4914-9f00-f2988c528412.jpg)
-
-比较详细的地址：http://www.cheat-sheets.org/saved-copy/git-cheat-sheet.pdf
-
 #### 命令理解：
 
 `git init`    初始化一个Git仓库
@@ -451,6 +445,12 @@ $ git reset --hard 1094a
 
 
 
+#### Git 命令一览
+
+![img](https://raw.githubusercontent.com/CyC2018/CS-Notes/master/notes/pics/7a29acce-f243-4914-9f00-f2988c528412.jpg)
+
+比较详细的地址：http://www.cheat-sheets.org/saved-copy/git-cheat-sheet.pdf
+
 
 
 #### reference：
@@ -470,7 +470,6 @@ github相当于是一个代码仓库，一般一个项目对应一个仓库
 * pull request：B更新了项目，pull request A，等待A查看，A确认后，可以合并B的更新
 * watch：关注项目，当项目更新可以接收到通知
 * issue：讨论问题
-* 
 
 
 
