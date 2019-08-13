@@ -21,9 +21,6 @@ Table of Contents
 * [github](#github)
 * [draw\.io](#drawio)
 
-Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc.go)
-
-D:\AppStore\GitContentTable\gh-md-toc.windows.amd64\gh-md-toc.windows.amd64>
 # git
 
 ​		在windows环境下模拟linux环境
