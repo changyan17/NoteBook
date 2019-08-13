@@ -45,7 +45,7 @@ Git是目前世界上最先进的分布式版本控制系统，可以帮助记�
 
 本地仓库与远程仓库的工作流：
 
-![1565615025778](C:\Users\changyan\AppData\Roaming\Typora\typora-user-images\1565615025778.png)
+![1565615025778](https://raw.githubusercontent.com/changyan17/NoteBook/master/pictures/1565615025778.png)
 
 
 
@@ -97,7 +97,9 @@ Git 的版本库有一个称为 Stage 的暂存区以及最后的 History 版本
 - git reset -- files 使用当前分支上的修改覆盖暂存区，用来撤销最后一次 git add files
 - git checkout -- files 使用暂存区的修改覆盖工作目录，用来撤销本地修改
 
-![1565598907169](C:\Users\changyan\AppData\Roaming\Typora\typora-user-images\1565598907169.png)
+![1565598907169](https://raw.githubusercontent.com/changyan17/NoteBook/master/pictures/1565598842310.png)
+
+
 
 ```shell
 $ git add file1.txt
@@ -111,27 +113,33 @@ $ git commit -m "add 3 files."
 - git commit -a 直接把所有文件的修改添加到暂存区然后执行提交
 - git checkout HEAD -- files 取出最后一次修改，可以用来进行回滚操作
 
-![1565598890690](C:\Users\changyan\AppData\Roaming\Typora\typora-user-images\1565598890690.png)
-
-
+![1565598890690](https://raw.githubusercontent.com/changyan17/NoteBook/master/pictures/1565598890690.png)
 
 #### 分支简介
 
 使用指针将每个提交连接成一条时间线，HEAD 指针指向当前分支指针。
 
-![1565599137184](C:\Users\changyan\AppData\Roaming\Typora\typora-user-images\1565599137184.png)
+![1565599137184](https://raw.githubusercontent.com/changyan17/NoteBook/master/pictures/1565599137184.png)
+
+
 
 新建分支是新建一个指针指向时间线的最后一个节点，并让 HEAD 指针指向新分支，表示新分支成为当前分支。
 
-![1565599154337](C:\Users\changyan\AppData\Roaming\Typora\typora-user-images\1565599154337.png)
+![1565599154337](https://raw.githubusercontent.com/changyan17/NoteBook/master/pictures/1565599154337.png)
+
+
 
 每次提交只会让当前分支指针向前移动，而其它分支指针不会移动。
 
-![1565599174391](C:\Users\changyan\AppData\Roaming\Typora\typora-user-images\1565599174391.png)
+![1565599174391](https://raw.githubusercontent.com/changyan17/NoteBook/master/pictures/1565599174391.png)
+
+
 
 合并分支也只需要改变指针即可。
 
-![1565599192208](C:\Users\changyan\AppData\Roaming\Typora\typora-user-images\1565599192208.png)
+![1565599192208](https://raw.githubusercontent.com/changyan17/NoteBook/master/pictures/1565599192208.png)
+
+
 
 **note：**
 
@@ -145,7 +153,9 @@ $ git commit -m "add 3 files."
 
 1. fast-foward模式
 
-![1565682796969](C:\Users\changyan\AppData\Roaming\Typora\typora-user-images\1565682796969.png)
+![1565682796969](https://raw.githubusercontent.com/changyan17/NoteBook/master/pictures/1565682796969.png)
+
+
 
 **上图所示的情况可以完成快速合并**
 
@@ -169,7 +179,9 @@ $ git log --graph --pretty=oneline --abbrev-commit
 
 图示如下：
 
-![1565683100413](C:\Users\changyan\AppData\Roaming\Typora\typora-user-images\1565683100413.png)
+![1565683100413](https://raw.githubusercontent.com/changyan17/NoteBook/master/pictures/1565683095797.png)
+
+
 
 3. 分支策略
 
@@ -183,7 +195,9 @@ $ git log --graph --pretty=oneline --abbrev-commit
 
 所以，团队合作的分支看起来就像这样：
 
-![1565683365947](C:\Users\changyan\AppData\Roaming\Typora\typora-user-images\1565683365947.png)
+![1565683365947](https://raw.githubusercontent.com/changyan17/NoteBook/master/pictures/1565683365947.png)
+
+
 
 > 合并分支时，加上`--no-ff`参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而`fast forward`合并就看不出来曾经做过合并。
 
@@ -195,7 +209,9 @@ $ git log --graph --pretty=oneline --abbrev-commit
 
 当两个分支都对**同一个文件的同一行**进行了修改，在分支合并时就会产生冲突。
 
-![1565599354276](C:\Users\changyan\AppData\Roaming\Typora\typora-user-images\1565599354276.png)
+![1565599354276](https://raw.githubusercontent.com/changyan17/NoteBook/master/pictures/1565599354276.png)
+
+
 
 Git 会使用 <<<<<<< ，======= ，>>>>>>> 标记出不同分支的内容，只需要把不同分支中冲突部分修改成一样就能解决冲突。
 
@@ -458,7 +474,8 @@ $ git reset --hard 1094a
 - [Git - 简明指南](http://rogerdudler.github.io/git-guide/index.zh.html)
 - [图解 Git](http://marklodato.github.io/visual-git-guide/index-zh-cn.html)
 - [廖雪峰 : Git 教程](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)（使用过程即描述非常清晰）
-- [Learn Git Branching](https://learngitbranching.js.org/)
+- [Learn Git Branching
+- https://github.com/huster-mr/CS-Notes
 
 
 
@@ -466,7 +483,7 @@ $ git reset --hard 1094a
 
 github相当于是一个代码仓库，一般一个项目对应一个仓库
 
-* fork:BforkA的项目，相当于复制A的项目到自己的github下
+* fork: B fork A的项目，相当于复制A的项目到自己的 github下
 * pull request：B更新了项目，pull request A，等待A查看，A确认后，可以合并B的更新
 * watch：关注项目，当项目更新可以接收到通知
 * issue：讨论问题
