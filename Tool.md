@@ -22,7 +22,7 @@ $ ssh-keygen -t rsa -C "youremail@example.com"
 
 reference：<https://blog.csdn.net/qq_37512323/article/details/80693445>
 
-### git 简介
+## git 简介
 
 Git是目前世界上最先进的分布式版本控制系统，可以帮助记录每次文件的改动，还可以让同事协作编辑，方便文件改动的记录和恢复
 
@@ -39,9 +39,9 @@ Git是目前世界上最先进的分布式版本控制系统，可以帮助记�
 * 在实际使用分布式版本控制系统的时候，其实很少在两人之间的电脑上推送版本库的修改，因为可能你们俩不在一个局域网内，两台电脑互相访问不了，也可能今天你的同事病了，他的电脑压根没有开机。因此，分布式版本控制系统通常也有一台充当“中央服务器”的电脑，但这个服务器的作用仅仅是用来方便“交换”大家的修改，没有它大家也一样干活，只是交换修改不方便而已
 * svn是集中式版本控制系统，开发人员需要连接到中心服务器上，才可以完成代码的提交和修改
 
-### git使用
+## git使用
 
-#### 工作流
+### 工作流
 
 本地仓库与远程仓库的工作流：
 
@@ -115,7 +115,7 @@ $ git commit -m "add 3 files."
 
 ![1565598890690](https://raw.githubusercontent.com/changyan17/NoteBook/master/pictures/1565598890690.png)
 
-#### 分支简介
+### 分支简介
 
 使用指针将每个提交连接成一条时间线，HEAD 指针指向当前分支指针。
 
@@ -149,7 +149,7 @@ $ git commit -m "add 3 files."
 
 
 
-#### 分支合并策略
+### 分支合并策略
 
 1. fast-foward模式
 
@@ -205,7 +205,7 @@ $ git log --graph --pretty=oneline --abbrev-commit
 
 
 
-#### git冲突
+### git冲突
 
 当两个分支都对**同一个文件的同一行**进行了修改，在分支合并时就会产生冲突。
 
@@ -231,7 +231,7 @@ Creating a new branch is quick AND simple.
 
 
 
-#### 分支推送
+### 分支推送
 
 1. 简介
 
@@ -335,7 +335,7 @@ To github.com:michaelliao/learngit.git
 
 
 
-#### 储藏（Stashing）
+### 储藏（Stashing）
 
 在一个分支上操作之后，如果还没有将修改提交到分支上，此时进行切换分支，那么另一个分支上也能看到新的修改。这是因为所有分支都共用一个工作区的缘故。
 
@@ -378,7 +378,7 @@ $ git stash apply stash@{0}
 
 
 
-#### 命令理解：
+### 命令理解：
 
 `git init`    初始化一个Git仓库
 
@@ -461,7 +461,7 @@ $ git reset --hard 1094a
 
 
 
-#### Git 命令一览
+### Git 命令一览
 
 ![img](https://raw.githubusercontent.com/CyC2018/CS-Notes/master/notes/pics/7a29acce-f243-4914-9f00-f2988c528412.jpg)
 
@@ -469,7 +469,7 @@ $ git reset --hard 1094a
 
 
 
-#### reference：
+### reference：
 
 - [Git - 简明指南](http://rogerdudler.github.io/git-guide/index.zh.html)
 - [图解 Git](http://marklodato.github.io/visual-git-guide/index-zh-cn.html)
@@ -479,9 +479,9 @@ $ git reset --hard 1094a
 
 
 
-#### 小技能
+### 小技能
 
-##### 场景一
+#### 场景一
 
 ​		如果在本地仓库创建markdown文件，且文档中包含图片，同步到远程仓库中，远程仓库中的图片显示异常
 
@@ -493,7 +493,7 @@ $ git reset --hard 1094a
 
 
 
-## github
+# github
 
 github相当于是一个代码仓库，一般一个项目对应一个仓库
 
@@ -504,7 +504,7 @@ github相当于是一个代码仓库，一般一个项目对应一个仓库
 
 
 
-## draw.io
+# draw.io
 
 
 
