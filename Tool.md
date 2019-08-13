@@ -1,14 +1,14 @@
 
 
-## git
+# git
 
 ​		在windows环境下模拟linux环境
 
 
 
-### git安装
+## git安装
 
-#### SSH 传输设置
+### SSH 传输设置
 
 Git 仓库和 Github 中心仓库之间的传输是通过 SSH 加密。
 
