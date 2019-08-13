@@ -1,5 +1,3 @@
-
-
 # git
 
 ​		在windows环境下模拟linux环境
@@ -489,7 +487,7 @@ $ git reset --hard 1094a
 
 		1. 上传本地图片至github中
   		2. 点击github中图片的下载，将其连接复制到markdown本地文件中，如：https://raw.githubusercontent.com/changyan17/NoteBook/master/pictures/1565615025778.png
-  		3. 更新markdown文档中的全部图片连接后，再次上传即可正常显示图片
+    		3. 更新markdown文档中的全部图片连接后，再次上传即可正常显示图片
 
 
 
