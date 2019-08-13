@@ -1,9 +1,5 @@
 
 
-# 工具使用
-
-[TOC]
-
 ## git
 
 ​		在windows环境下模拟linux环境
