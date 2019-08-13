@@ -502,15 +502,42 @@ $ git reset --hard 1094a
 
 ### 小技能
 
-#### 场景一
+#### 场景一[picture]
 
 ​		如果在本地仓库创建markdown文件，且文档中包含图片，同步到远程仓库中，远程仓库中的图片显示异常
 
 ​		解决方案：
 
-		1. 上传本地图片至github中
-  		2. 点击github中图片的下载，将其连接复制到markdown本地文件中，如：https://raw.githubusercontent.com/changyan17/NoteBook/master/pictures/1565615025778.png
-    		3. 更新markdown文档中的全部图片连接后，再次上传即可正常显示图片
+1. 上传本地图片至github中
+
+     		2. 点击github中图片的下载，将其连接复制到markdown本地文件中，如：https://raw.githubusercontent.com/changyan17/NoteBook/master/pictures/1565615025778.png
+     		3. 更新markdown文档中的全部图片连接后，再次上传即可正常显示图片
+
+
+
+####  场景二[TOC]
+
+​		windows : github中不支持markdown 自动生成目录TOC
+
+​		解决方案：
+
+1. 下载gh-md-toc  https://github.com/ekalinin/github-markdown-toc.go/releases
+2. 解压后，暴力将gh-md-toc的后缀更改为.exe
+3. 将需要添加目录的md文件放至和gh-md-toc.exe同一目录下
+4. 光标移至exe上，按住shift键，同时右击
+
+![1565701016926](C:\Users\changyan\AppData\Roaming\Typora\typora-user-images\1565701016926.png)
+
+5. 将exe拖拽进该cmd（防止出现闪退现象） 
+
+![1565701073481](C:\Users\changyan\AppData\Roaming\Typora\typora-user-images\1565701073481.png)
+
+![1565701387430](C:\Users\changyan\AppData\Roaming\Typora\typora-user-images\1565701387430.png)
+
+
+
+6. 生成Tool.md的目录代码（GFM格式），将其粘贴至github的文件中即可
+7. 右键cmd菜单栏  ->  编辑  ->  标记  ->  选中需要复制的内容  ->  右键cmd菜单栏  ->  编辑  ->  复制即可
 
 
 
