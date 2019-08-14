@@ -500,9 +500,9 @@ $ git reset --hard 1094a
 
 
 
-### 小技能
+## 小技能
 
-#### 场景一[picture]
+### 场景一[picture]
 
 如果在本地仓库创建markdown文件，且文档中包含图片，同步到远程仓库中，远程仓库中的图片显示异常
 
@@ -515,7 +515,7 @@ $ git reset --hard 1094a
 
 
 
-####  场景二[TOC]
+###  场景二[TOC]
 
 windows : github中不支持markdown 自动生成目录TOC
 
@@ -545,7 +545,7 @@ windows : github中不支持markdown 自动生成目录TOC
 
 
 
-#### 场景三[gitignore]
+### 场景三[gitignore]
 
 如果在git仓库中包含了某些不能或者不想提交的文件，每次使用git  status时都会显示这些文件untracked files,此时可以通过配置.gitignore文件来进行忽略
 
