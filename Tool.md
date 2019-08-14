@@ -494,7 +494,7 @@ $ git reset --hard 1094a
 - [Git - 简明指南](http://rogerdudler.github.io/git-guide/index.zh.html)
 - [图解 Git](http://marklodato.github.io/visual-git-guide/index-zh-cn.html)
 - [廖雪峰 : Git 教程](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)（使用过程即描述非常清晰）
-- [Learn Git Branching
+- [Learn Git Branching](https://learngitbranching.js.org/)
 - https://github.com/huster-mr/CS-Notes
 
 
@@ -503,7 +503,7 @@ $ git reset --hard 1094a
 
 #### 场景一[picture]
 
-​		如果在本地仓库创建markdown文件，且文档中包含图片，同步到远程仓库中，远程仓库中的图片显示异常
+如果在本地仓库创建markdown文件，且文档中包含图片，同步到远程仓库中，远程仓库中的图片显示异常
 
 ​		解决方案：
 
@@ -516,7 +516,7 @@ $ git reset --hard 1094a
 
 ####  场景二[TOC]
 
-​		windows : github中不支持markdown 自动生成目录TOC
+windows : github中不支持markdown 自动生成目录TOC
 
 ​		解决方案：
 
@@ -541,6 +541,12 @@ $ git reset --hard 1094a
 
 6. 生成Tool.md的目录代码（GFM格式），将其粘贴至github的文件中即可
 7. 右键cmd菜单栏  ->  编辑  ->  标记  ->  选中需要复制的内容  ->  右键cmd菜单栏  ->  编辑  ->  复制即可
+
+#### 场景三[gitignore]
+
+如果在git仓库中包含了某些不能或者不想提交的文件，每次使用git  status时都会显示这些文件untracked files,此时可以通过配置.gitignore文件来进行忽略
+
+不需要从头写`.gitignore`文件，GitHub已经为我们准备了各种配置文件，只需要组合一下就可以使用了。所有配置文件可以直接在线浏览：https://github.com/github/gitignore
 
 
 
