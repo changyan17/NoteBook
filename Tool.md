@@ -1,6 +1,11 @@
+---
+
+typora-copy-images-to: ..\NoteBook-img
+---
 
  [Table of Contents](#table-of-contents)
  [git](#git)
+
  * [git安装](#git%E5%AE%89%E8%A3%85)
    * [SSH 传输设置](#ssh-%E4%BC%A0%E8%BE%93%E8%AE%BE%E7%BD%AE)
  * [git 简介](#git-%E7%AE%80%E4%BB%8B)
@@ -542,11 +547,30 @@ windows : github中不支持markdown 自动生成目录TOC
 6. 生成Tool.md的目录代码（GFM格式），将其粘贴至github的文件中即可
 7. 右键cmd菜单栏  ->  编辑  ->  标记  ->  选中需要复制的内容  ->  右键cmd菜单栏  ->  编辑  ->  复制即可
 
+
+
 #### 场景三[gitignore]
 
 如果在git仓库中包含了某些不能或者不想提交的文件，每次使用git  status时都会显示这些文件untracked files,此时可以通过配置.gitignore文件来进行忽略
 
+
+
 不需要从头写`.gitignore`文件，GitHub已经为我们准备了各种配置文件，只需要组合一下就可以使用了。所有配置文件可以直接在线浏览：https://github.com/github/gitignore
+
+
+
+**操作步骤：**
+
+1. 在工作目录下创建.gitignore文件
+2. 在该文件中添加想要忽略的文件信息
+
+
+
+**忽略文件的原则是：**
+
+1. 忽略操作系统自动生成的文件，比如缩略图等；
+2. 忽略编译生成的中间文件、可执行文件等，也就是如果一个文件是通过另一个文件自动生成的，那自动生成的文件就没必要放进版本库，比如Java编译产生的`.class`文件；
+3. 忽略你自己的带有敏感信息的配置文件，比如存放口令的配置文件。
 
 
 
@@ -563,5 +587,28 @@ github相当于是一个代码仓库，一般一个项目对应一个仓库
 
 # draw.io
 
+* **打开draw.io之后，可以搜索图形，选中拖拽至画图区**
+
+![1565748724306](C:\Users\changyan\AppData\Roaming\Typora\typora-user-images\1565748724306.png)
+
+![1565748749613](C:\Users\changyan\AppData\Roaming\Typora\typora-user-images\1565748749613.png)
 
 
+
+
+
+* **可以通过上方的菜单栏选择sql生成或者其他方式，直接利用代码插入图表等**
+
+![1565748880398](C:\Users\changyan\AppData\Roaming\Typora\typora-user-images\1565748880398.png)
+
+
+
+![1565748898079](C:\Users\changyan\AppData\Roaming\Typora\typora-user-images\1565748898079.png)
+
+
+
+![1565748930910](C:\Users\changyan\AppData\Roaming\Typora\typora-user-images\1565748930910.png)
+
+
+
+* 操作本地图片时，可以直接将本地图片拖拽至工作区即可
