@@ -589,9 +589,11 @@ github相当于是一个代码仓库，一般一个项目对应一个仓库
 
 * **打开draw.io之后，可以搜索图形，选中拖拽至画图区**
 
-![1565748724306](C:\Users\changyan\AppData\Roaming\Typora\typora-user-images\1565748724306.png)
+![1565748724306](https://raw.githubusercontent.com/changyan17/NoteBook/master/pictures/1565748724306.png)
 
-![1565748749613](C:\Users\changyan\AppData\Roaming\Typora\typora-user-images\1565748749613.png)
+
+
+![1565748749613](https://raw.githubusercontent.com/changyan17/NoteBook/master/pictures/1565748749613.png)
 
 
 
@@ -599,16 +601,18 @@ github相当于是一个代码仓库，一般一个项目对应一个仓库
 
 * **可以通过上方的菜单栏选择sql生成或者其他方式，直接利用代码插入图表等**
 
-![1565748880398](C:\Users\changyan\AppData\Roaming\Typora\typora-user-images\1565748880398.png)
+![1565748880398](https://raw.githubusercontent.com/changyan17/NoteBook/master/pictures/1565748880398.png)
 
 
 
-![1565748898079](C:\Users\changyan\AppData\Roaming\Typora\typora-user-images\1565748898079.png)
+
+
+![1565748898079](https://raw.githubusercontent.com/changyan17/NoteBook/master/pictures/1565748898079.png)
 
 
 
-![1565748930910](C:\Users\changyan\AppData\Roaming\Typora\typora-user-images\1565748930910.png)
 
 
+![1565751651856](F:\NoteBook-img\1565751651856.png)
 
 * 操作本地图片时，可以直接将本地图片拖拽至工作区即可
