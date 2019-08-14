@@ -613,6 +613,8 @@ github相当于是一个代码仓库，一般一个项目对应一个仓库
 
 
 
-![1565751651856](F:\NoteBook-img\1565751651856.png)
+![1565751651856](https://raw.githubusercontent.com/changyan17/NoteBook/master/pictures/1565751651856.png)
+
+
 
 * 操作本地图片时，可以直接将本地图片拖拽至工作区即可
