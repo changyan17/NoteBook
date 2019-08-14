@@ -525,7 +525,7 @@ $ git reset --hard 1094a
 3. 将需要添加目录的md文件放至和gh-md-toc.exe同一目录下
 4. 光标移至exe上，按住shift键，同时右击
 
-![1565701016926](C:\Users\changyan\AppData\Roaming\Typora\typora-user-images\1565701016926.png)
+![1565701016926](https://raw.githubusercontent.com/changyan17/NoteBook/master/pictures/1565701016926.png)
 
 5. 将exe拖拽进该cmd（防止出现闪退现象） 
 
